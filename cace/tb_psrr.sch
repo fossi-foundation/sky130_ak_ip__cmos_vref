@@ -16,17 +16,15 @@ lab=dvdd}
 N -160 70 -160 100 {
 lab=dvdd}
 N -160 130 -120 130 {
-lab=dvdd}
-N -160 100 -160 130 {
-lab=dvdd}
+lab=#net1}
 N -290 -20 -120 -20 {
-lab=#net1}
+lab=#net2}
 N -290 -70 -290 -20 {
-lab=#net1}
+lab=#net2}
 N -190 -50 -120 -50 {
-lab=#net2}
+lab=#net3}
 N -190 -70 -190 -50 {
-lab=#net2}
+lab=#net3}
 N 130 40 270 40 {
 lab=vref}
 N 130 -50 170 -50 {
@@ -45,12 +43,6 @@ N 270 100 370 100 {
 lab=GND}
 N 270 40 370 40 {
 lab=vref}
-N 130 130 130 220 {
-lab=#net3}
-N 130 220 170 220 {
-lab=#net3}
-N 170 210 170 220 {
-lab=#net3}
 C {devices/vsource.sym} -190 -270 0 0 {name=Vavdd value="DC \{Vavdd\}"}
 C {devices/vdd.sym} -190 -360 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} -190 -240 0 0 {name=l8 lab=GND}
@@ -94,5 +86,4 @@ value=\{Rload\}
 device=resistor
 m=1}
 C {sky130_fd_pr/corner.sym} 60 -330 0 0 {name=CORNER only_toplevel=false corner=\{corner\}}
-C {devices/vdd.sym} 170 150 0 0 {name=l2 lab=avdd}
-C {devices/vsource.sym} 170 180 0 0 {name=Vsense3 value="dc 0"}
+C {devices/gnd.sym} -160 130 0 0 {name=l2 lab=GND}

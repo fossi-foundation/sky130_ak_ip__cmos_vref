@@ -5,8 +5,6 @@ K {}
 V {}
 S {}
 E {}
-N -200 40 -120 40 {
-lab=dvdd}
 N -160 70 -120 70 {
 lab=dvdd}
 N -160 40 -160 70 {
@@ -16,9 +14,7 @@ lab=dvdd}
 N -160 70 -160 100 {
 lab=dvdd}
 N -160 130 -120 130 {
-lab=dvdd}
-N -160 100 -160 130 {
-lab=dvdd}
+lab=GND}
 N -290 -20 -120 -20 {
 lab=#net1}
 N -290 -70 -290 -20 {
@@ -45,8 +41,22 @@ N 390 -100 530 -100 {
 lab=vbg}
 N 450 -40 530 -40 {
 lab=GND}
-N 130 130 170 130 {
-lab=#net3}
+N -160 40 -120 40 {
+lab=dvdd}
+N -200 70 -160 70 {
+lab=dvdd}
+N 120 170 140 170 {
+lab=GND}
+N 120 170 120 250 {
+lab=GND}
+N 200 170 220 170 {
+lab=GND}
+N 220 170 220 250 {
+lab=GND}
+N 120 250 220 250 {
+lab=GND}
+N 130 130 190 130 {
+lab=vptat}
 C {devices/vsource.sym} -130 -270 0 0 {name=Vavdd value="dc \{Vavdd\}"}
 C {devices/vdd.sym} -130 -300 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} -130 -240 0 0 {name=l8 lab=GND}
@@ -56,6 +66,7 @@ value="
 .option warn=1
 .option TEMP=\{temperature\}
 .nodeset v(vbg)=1.2
+.nodeset v(vptat)=0.1
 .control
 set wr_singlescale
 let it = 0
@@ -115,7 +126,7 @@ C {devices/gnd.sym} 170 10 0 0 {name=l20 lab=GND}
 C {../xschem/sky130_ak_ip__cmos_vref.sym} 10 40 0 0 {name=X1}
 C {devices/vdd.sym} -290 -130 0 0 {name=l1 lab=avdd}
 C {devices/vsource.sym} -290 -100 0 0 {name=Vsense1 value="dc 0"}
-C {devices/vdd.sym} -200 40 0 0 {name=l4 lab=dvdd}
+C {devices/vdd.sym} -200 70 0 0 {name=l4 lab=dvdd}
 C {devices/vsource.sym} -30 -270 0 0 {name=Vdvdd value="DC \{Vdvdd\}"}
 C {devices/vdd.sym} -30 -300 0 0 {name=l5 lab=dvdd}
 C {devices/gnd.sym} -30 -240 0 0 {name=l6 lab=GND}
@@ -128,7 +139,6 @@ C {devices/gnd.sym} 490 -40 0 0 {name=l9 lab=GND}
 C {devices/vdd.sym} -190 -130 0 0 {name=l11 lab=dvdd}
 C {devices/vsource.sym} -190 -100 0 0 {name=Vsense2 value="dc 0"}
 C {devices/gnd.sym} -160 10 0 0 {name=l12 lab=GND}
-C {devices/vsource.sym} 170 160 0 0 {name=Vsense3 value="dc 0"}
 C {devices/lab_pin.sym} 190 70 0 1 {name=l3 sig_type=std_logic lab=vbgsc}
 C {devices/lab_pin.sym} 190 100 0 1 {name=l13 sig_type=std_logic lab=vbgtg}
 C {devices/res.sym} 450 -70 0 0 {name=R1
@@ -138,4 +148,21 @@ device=resistor
 m=1}
 C {devices/lab_pin.sym} 390 -100 0 0 {name=l14 sig_type=std_logic lab=vbg}
 C {sky130_fd_pr/corner.sym} 70 -330 0 0 {name=CORNER only_toplevel=false corner=\{corner\}}
-C {devices/gnd.sym} 170 190 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} 170 250 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} -160 130 0 0 {name=l15 lab=GND}
+C {sky130_fd_pr/nfet3_01v8.sym} 170 150 1 0 {name=M1
+W=2
+L=2
+body=GND
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 190 130 0 1 {name=l16 sig_type=std_logic lab=vptat}

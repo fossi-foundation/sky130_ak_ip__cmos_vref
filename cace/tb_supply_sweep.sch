@@ -1,4 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
+v {xschem version=3.4.4 file_version=1.2
 }
 G {}
 K {}
@@ -16,9 +16,7 @@ lab=dvdd}
 N -160 70 -160 100 {
 lab=dvdd}
 N -160 130 -120 130 {
-lab=dvdd}
-N -160 100 -160 130 {
-lab=dvdd}
+lab=GND}
 N -290 -20 -120 -20 {
 lab=#net1}
 N -290 -70 -290 -20 {
@@ -35,8 +33,6 @@ N -160 10 -120 10 {
 lab=GND}
 N 170 -50 170 -20 {
 lab=GND}
-N 130 10 170 10 {
-lab=GND}
 N 170 -20 170 10 {
 lab=GND}
 N 370 40 450 40 {
@@ -47,10 +43,8 @@ N 410 -50 410 -20 {
 lab=vbg}
 N 130 40 200 40 {
 lab=vbg}
-N 130 130 130 230 {
-lab=#net3}
-N 130 230 200 230 {
-lab=#net3}
+N 130 130 200 130 {
+lab=vptat}
 C {devices/vsource.sym} -190 -270 0 0 {name=Vavdd value="DC 1.8"}
 C {devices/vdd.sym} -190 -300 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} -190 -240 0 0 {name=l8 lab=GND}
@@ -59,6 +53,8 @@ only_toplevel=false
 value="
 .option warn=1
 .option TEMP=\{temperature\}
+.nodeset V(vbg)=1.2
+.nodeset V(vptat)=0.2
 .control
 save vbg
 dc Vavdd \{Vavdd|minimum\} \{Vavdd|maximum\} 10m
@@ -69,7 +65,7 @@ quit
 "}
 C {devices/lab_pin.sym} 410 -50 0 1 {name=l10 sig_type=std_logic lab=vbg}
 C {devices/gnd.sym} 170 10 0 0 {name=l20 lab=GND}
-C {xschem/sky130_ak_ip__cmos_vref.sym} 10 40 0 0 {name=X1}
+C {../xschem/sky130_ak_ip__cmos_vref.sym} 10 40 0 0 {name=X1}
 C {devices/vdd.sym} -290 -130 0 0 {name=l1 lab=avdd}
 C {devices/vsource.sym} -290 -100 0 0 {name=Vsense1 value="dc 0"}
 C {devices/vdd.sym} -200 40 0 0 {name=l4 lab=dvdd}
@@ -90,5 +86,5 @@ device=resistor
 m=1}
 C {devices/lab_pin.sym} 200 40 0 1 {name=l2 sig_type=std_logic lab=vbg}
 C {sky130_fd_pr/corner.sym} 70 -330 0 0 {name=CORNER only_toplevel=false corner=\{corner\}}
-C {devices/vsource.sym} 200 200 0 0 {name=Vsense3 value="dc 0"}
-C {devices/vdd.sym} 200 170 0 0 {name=l3 lab=avdd}
+C {devices/gnd.sym} -160 130 0 0 {name=l3 lab=GND}
+C {devices/lab_pin.sym} 200 130 0 1 {name=l13 sig_type=std_logic lab=vptat}

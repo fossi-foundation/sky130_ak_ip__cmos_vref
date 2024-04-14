@@ -16,17 +16,15 @@ lab=dvdd}
 N -160 70 -160 100 {
 lab=dvdd}
 N -160 130 -120 130 {
-lab=dvdd}
-N -160 100 -160 130 {
-lab=dvdd}
+lab=#net1}
 N -290 -20 -120 -20 {
-lab=#net1}
+lab=#net2}
 N -290 -70 -290 -20 {
-lab=#net1}
+lab=#net2}
 N -190 -50 -120 -50 {
-lab=#net2}
+lab=#net3}
 N -190 -70 -190 -50 {
-lab=#net2}
+lab=#net3}
 N 130 40 270 40 {
 lab=vbg}
 N 130 -50 170 -50 {
@@ -43,8 +41,6 @@ N 270 40 350 40 {
 lab=vbg}
 N 270 100 350 100 {
 lab=GND}
-N 130 130 170 130 {
-lab=#net3}
 C {devices/vsource.sym} -190 -270 0 0 {name=Vavdd value="DC \{Vavdd\}"}
 C {devices/vdd.sym} -190 -360 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} -190 -240 0 0 {name=l8 lab=GND}
@@ -76,7 +72,6 @@ C {devices/vdd.sym} -190 -130 0 0 {name=l11 lab=dvdd}
 C {devices/vsource.sym} -190 -100 0 0 {name=Vsense2 value="dc 0"}
 C {devices/gnd.sym} -160 10 0 0 {name=l12 lab=GND}
 C {sky130_fd_pr/corner.sym} 60 -330 0 0 {name=CORNER only_toplevel=false corner=\{corner\}}
-C {devices/vsource.sym} 170 160 0 0 {name=Vsense3 value="dc 0"}
 C {devices/res.sym} 270 70 0 0 {name=R1
 value=\{Rload\}
 device=resistor
@@ -87,4 +82,4 @@ value=\{Cload\}
 device="ceramic capacitor"}
 C {devices/gnd.sym} 310 100 0 0 {name=l3 lab=GND}
 C {devices/vsource.sym} -190 -330 0 0 {name=Vin value="DC 0 AC 1"}
-C {devices/gnd.sym} 170 190 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} -160 130 0 0 {name=l2 lab=GND}
