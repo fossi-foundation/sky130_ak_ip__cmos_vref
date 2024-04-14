@@ -1,0 +1,72 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1713050389
+<< error_s >>
+rect 6748 2586 6786 4978
+rect 8414 2586 8440 5010
+<< metal1 >>
+rect 5136 2242 5336 2442
+rect 5136 1694 5336 1894
+rect 5140 1466 5340 1666
+rect 8130 -2786 8330 -2586
+rect 9964 -2768 10164 -2568
+rect 10360 -2794 10560 -2594
+use sky130_fd_pr__nfet_01v8_J222PV  sky130_fd_pr__nfet_01v8_J222PV_0
+timestamp 1713050122
+transform 1 0 5805 0 1 -2086
+box -625 -710 625 710
+use sky130_fd_pr__nfet_01v8_W2FWA4  sky130_fd_pr__nfet_01v8_W2FWA4_0
+timestamp 1713050122
+transform 1 0 7285 0 1 -2086
+box -625 -710 625 710
+use sky130_fd_pr__nfet_05v0_nvt_CXW7PW  sky130_fd_pr__nfet_05v0_nvt_CXW7PW_0
+timestamp 1713050122
+transform -1 0 7277 0 -1 66
+box -657 -1258 657 1258
+use sky130_fd_pr__pfet_01v8_ST5LSM  sky130_fd_pr__pfet_01v8_ST5LSM_0
+timestamp 1713050389
+transform 1 0 9639 0 1 2791
+box -1225 -2219 1225 2219
+use sky130_fd_pr__cap_mim_m3_1_VCAG9S  XC2
+timestamp 1713045697
+transform 1 0 10056 0 1 -104
+box -686 -540 686 540
+use sky130_fd_pr__nfet_01v8_QGMQL3  XM1
+timestamp 1713045697
+transform 1 0 8872 0 1 -2374
+box -296 -460 296 460
+use sky130_fd_pr__nfet_01v8_MMMA4V  XM2
+timestamp 1713045697
+transform 1 0 8872 0 1 -1100
+box -296 -710 296 710
+use sky130_fd_pr__nfet_01v8_HS3BL4  XM3
+timestamp 1713045697
+transform 1 0 9560 0 1 -1824
+box -296 -1010 296 1010
+use sky130_fd_pr__pfet_01v8_6H4ZLK  XM6
+timestamp 1713045697
+transform 0 -1 7467 1 0 3782
+box -1196 -719 1196 719
+use sky130_fd_pr__pfet_01v8_6H4ZLK  XM7
+timestamp 1713045697
+transform 0 1 5813 -1 0 3772
+box -1196 -719 1196 719
+use sky130_fd_pr__nfet_05v0_nvt_CXW7PW  XM10
+timestamp 1713050122
+transform 1 0 5811 0 1 26
+box -657 -1258 657 1258
+<< labels >>
+flabel metal1 5140 1466 5340 1666 0 FreeSans 256 0 0 0 vn
+port 3 nsew
+flabel metal1 5136 1694 5336 1894 0 FreeSans 256 0 0 0 vp
+port 2 nsew
+flabel metal1 5136 2242 5336 2442 0 FreeSans 256 0 0 0 vdd
+port 0 nsew
+flabel metal1 8130 -2786 8330 -2586 0 FreeSans 256 0 0 0 ibias
+port 4 nsew
+flabel metal1 9964 -2768 10164 -2568 0 FreeSans 256 0 0 0 vss
+port 5 nsew
+flabel metal1 10360 -2794 10560 -2594 0 FreeSans 256 0 0 0 vo
+port 1 nsew
+<< end >>
