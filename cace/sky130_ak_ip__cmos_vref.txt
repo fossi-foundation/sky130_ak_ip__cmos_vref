@@ -64,15 +64,15 @@ pins {
 	Vmax:			avdd + 0.3
 
 	+
-	name:			iptat
-	description:	PTAT Current Output
+	name:			vptat
+	description:	PTAT Voltage Output
 	type:			analog
 	direction:		output
 	Vmin:			avss - 0.3
 	Vmax:			avdd + 0.3
 
 	+
-	name:			avdd
+	name:			avdd18
 	description:	Positive analog power supply
 	type:			power
 	direction:		inout
