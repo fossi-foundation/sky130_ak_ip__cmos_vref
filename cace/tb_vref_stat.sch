@@ -78,17 +78,24 @@ let vref_mean = 0
 print iterations
 print vref_data
 dowhile it < iterations
+	print it
 	reset
 	save vbg, vbgsc, vbgtg
 	op
 	if ref_pin_option = 1
 		let vref_data[it] = V(vbgsc)
-		let vref_mean = vref_mean + V(vbgsc)
 	else
-		let vref_data[it] = V(vbg)
-		let vref_mean = vref_mean + V(vbg)
+		if ref_pin_option = 2
+			let vref_data[it] = V(vbgtg)
+		else
+			let vref_data[it] = V(vbg)
+		end
 	end
-	let it = it + 1
+	if vref_data[it] >= 0 
+		if vref_data[it] < 2
+			let it = it + 1
+		end
+	end
 end
 if output_option = 0
 	print V(vref_data)
@@ -100,6 +107,11 @@ if output_option = 0
 		let it = it + 1
 	end
 	quit
+end
+let it = 0;
+dowhile it < iterations
+	let vref_mean = vref_mean + vref_data[it]
+	let it = it + 1
 end
 let vref_mean = vref_mean / iterations
 if output_option = 1
