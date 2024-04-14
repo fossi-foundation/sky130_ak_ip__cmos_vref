@@ -677,7 +677,7 @@ electrical_parameters {
 	}
 	conditions {
 		name: Vavdd
-		minimum: 0.8
+		minimum: 1.0
 		maximum: 1.98
 
 		+
