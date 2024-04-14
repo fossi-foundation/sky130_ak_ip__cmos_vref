@@ -275,6 +275,39 @@ electrical_parameters {
 	}
 
 	+
+	name:			vbgtg_nom
+	status:			skip
+	description:	Scaled Reference Voltage of 1048mV
+	display:		Vbgtg Nominal
+	unit: 			mV
+	spec {
+		minimum:	any
+		typical:	1048
+		maximum:	any
+	}
+	simulate {
+		tool:		ngspice
+		template:	tb_vref_stat.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: corner
+		typical: mc
+
+		+
+		name: iterations
+		typical: 10
+
+		+
+		name: output_option
+		typical: 1
+
+		+
+		name: ref_pin_option
+		typical: 2
+	}
+
+	+
 	name:			Idd_enabled
 	status:			skip
 	description:	Current draw through analog supply, circuit enabled
