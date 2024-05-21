@@ -438,4 +438,6 @@ flabel metal1 10100 -2900 10300 -2700 0 FreeSans 256 0 0 0 vo
 port 1 nsew
 flabel metal1 8400 -2900 8600 -2700 0 FreeSans 256 0 0 0 ibias
 port 4 nsew
+rlabel metal2 8400 -1700 8600 -1500 1 vcm
+rlabel via1 7500 2300 7700 2500 1 vo_pre
 << end >>
