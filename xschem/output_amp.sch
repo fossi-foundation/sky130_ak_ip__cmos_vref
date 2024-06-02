@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -98,13 +98,13 @@ lab=vo_pre}
 N 620 -430 620 -190 {
 lab=vo}
 N 220 -340 250 -340 {
-lab=SUB}
+lab=vss}
 N 220 -260 250 -260 {
-lab=SUB}
+lab=vss}
 N 350 -340 380 -340 {
-lab=SUB}
+lab=vss}
 N 350 -260 380 -260 {
-lab=SUB}
+lab=vss}
 N 180 -120 180 -110 {
 lab=ibias}
 N 240 -120 550 -120 {
@@ -114,13 +114,13 @@ lab=ibias}
 N 550 -80 580 -80 {
 lab=ibias}
 N 300 -80 330 -80 {
-lab=SUB}
+lab=vss}
 N 150 -80 180 -80 {
 lab=SUB}
 N 240 -120 240 -80 {
 lab=ibias}
 N 620 -80 650 -80 {
-lab=SUB}
+lab=vss}
 N 180 -470 220 -470 {
 lab=vdd}
 N 180 -600 180 -470 {
@@ -131,8 +131,10 @@ N 420 -600 420 -470 {
 lab=vdd}
 N 620 -460 660 -460 {
 lab=vdd}
-N 660 -600 660 -460 {}
-N 620 -600 660 -600 {}
+N 660 -600 660 -460 {
+lab=vdd}
+N 620 -600 660 -600 {
+lab=vdd}
 C {devices/ipin.sym} 440 -260 0 1 {name=p2 lab=vp}
 C {sky130_fd_pr/nfet_01v8.sym} 200 -80 0 1 {name=M1
 L=1
@@ -301,10 +303,10 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} 380 -390 0 0 {name=p7 sig_type=std_logic lab=vo_pre}
 C {devices/lab_pin.sym} 300 -200 0 0 {name=p8 sig_type=std_logic lab=vcm}
-C {devices/lab_pin.sym} 250 -340 0 1 {name=p9 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 250 -260 0 1 {name=p10 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 350 -340 0 0 {name=p11 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 350 -260 0 0 {name=p12 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 330 -80 0 1 {name=p13 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 150 -80 0 0 {name=p14 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 650 -80 0 1 {name=p15 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 250 -340 0 1 {name=p9 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 250 -260 0 1 {name=p10 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 350 -340 0 0 {name=p11 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 350 -260 0 0 {name=p12 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 330 -80 0 1 {name=p13 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 150 -80 0 0 {name=p14 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 650 -80 0 1 {name=p15 sig_type=std_logic lab=vss}

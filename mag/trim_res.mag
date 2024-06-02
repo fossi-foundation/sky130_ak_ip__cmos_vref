@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1716338467
+timestamp 1717344711
 << metal1 >>
 rect 700 -300 2894 -100
 rect 2044 -558 2436 -300
@@ -284,35 +284,35 @@ rect 2896 -3480 2902 -3440
 rect 2954 -3480 2960 -3216
 rect 2896 -3490 2960 -3480
 use sky130_fd_pr__res_xhigh_po_0p69_2G52HS  sky130_fd_pr__res_xhigh_po_0p69_2G52HS_0
-timestamp 1716338467
+timestamp 1713051387
 transform 1 0 4116 0 1 -1073
 box -352 -927 352 927
 use sky130_fd_pr__res_xhigh_po_0p69_D5BT6X  sky130_fd_pr__res_xhigh_po_0p69_D5BT6X_0
-timestamp 1716338467
+timestamp 1713051387
 transform 1 0 4454 0 1 -2953
 box -1054 -927 1054 927
 use sky130_fd_pr__res_xhigh_po_0p69_H5FMR6  sky130_fd_pr__res_xhigh_po_0p69_H5FMR6_0
-timestamp 1716338467
+timestamp 1713051387
 transform 1 0 3635 0 1 -1073
 box -235 -927 235 927
 use sky130_fd_pr__res_xhigh_po_0p69_H5TM75  sky130_fd_pr__res_xhigh_po_0p69_H5TM75_0
-timestamp 1716338467
+timestamp 1713051387
 transform 1 0 4948 0 1 -1073
 box -586 -927 586 927
 use sky130_fd_pr__nfet_01v8_J222PV  XM1
-timestamp 1716338467
+timestamp 1713050122
 transform 1 0 2469 0 1 -1090
 box -625 -710 625 710
 use sky130_fd_pr__nfet_01v8_J222PV  XM2
-timestamp 1716338467
+timestamp 1713050122
 transform 1 0 1325 0 1 -1090
 box -625 -710 625 710
 use sky130_fd_pr__nfet_01v8_J222PV  XM3
-timestamp 1716338467
+timestamp 1713050122
 transform 1 0 1325 0 1 -2990
 box -625 -710 625 710
 use sky130_fd_pr__nfet_01v8_J222PV  XM4
-timestamp 1716338467
+timestamp 1713050122
 transform 1 0 2469 0 1 -2990
 box -625 -710 625 710
 << labels >>

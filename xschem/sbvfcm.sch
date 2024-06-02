@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -71,15 +71,15 @@ lab=nbias}
 N 3630 -500 3630 -480 {
 lab=pbias}
 N 3630 -420 3630 -400 {
-lab=pbias}
+lab=#net4}
 N 3730 -560 3730 -540 {
 lab=vdd}
 N 3730 -480 3730 -460 {
-lab=vdd}
+lab=#net5}
 N 3140 -530 3140 -510 {
-lab=vdd}
+lab=#net6}
 N 3300 -530 3300 -510 {
-lab=vdd}
+lab=#net7}
 N 3140 -610 3140 -590 {
 lab=vdd}
 N 3300 -610 3300 -590 {
@@ -101,15 +101,23 @@ lab=vdd}
 N 3100 -380 3140 -380 {
 lab=SUB}
 N 3100 -290 3140 -290 {
-lab=SUB}
+lab=vss}
 N 3300 -380 3340 -380 {
-lab=SUB}
+lab=vss}
 N 3300 -290 3340 -290 {
-lab=SUB}
+lab=vss}
 N 3590 -370 3630 -370 {
-lab=SUB}
+lab=vss}
 N 3690 -310 3730 -310 {
-lab=SUB}
+lab=vss}
+N 3340 -380 3410 -380 {
+lab=vss}
+N 3410 -380 3410 -240 {
+lab=vss}
+N 3300 -240 3410 -240 {
+lab=vss}
+N 3340 -290 3410 -290 {
+lab=vss}
 C {devices/iopin.sym} 3300 -210 0 0 {name=p9 lab=vss}
 C {sky130_fd_pr/nfet_01v8.sym} 3160 -290 0 1 {name=M3
 L=2
@@ -245,9 +253,7 @@ C {devices/ammeter.sym} 3730 -510 0 0 {name=Vm_st2 savecurrent=true lvs_ignore=s
 C {devices/ammeter.sym} 3140 -560 0 0 {name=Vm_b1 savecurrent=true lvs_ignore=short}
 C {devices/ammeter.sym} 3300 -560 0 0 {name=Vm_b2 savecurrent=true lvs_ignore=short}
 C {devices/lab_pin.sym} 3630 -500 0 0 {name=p10 sig_type=std_logic lab=pbias}
-C {devices/lab_pin.sym} 3100 -380 0 0 {name=p11 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 3100 -290 0 0 {name=p12 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 3340 -380 0 1 {name=p13 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 3340 -290 0 1 {name=p14 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 3590 -370 0 0 {name=p15 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 3690 -310 0 0 {name=p16 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 3100 -380 0 0 {name=p11 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 3100 -290 0 0 {name=p12 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 3590 -370 0 0 {name=p15 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 3690 -310 0 0 {name=p16 sig_type=std_logic lab=vss}
