@@ -1,6 +1,4 @@
-# Tcl script to run LVS on Alexandre Menu's LDO
-
-set project sky130_ak_ip__cmos_vref
+# Tcl script to run LVS on the ICRG ultra-low-power comparator
 
 if {[catch {set PDK_ROOT $::env(PDK_ROOT)}]} {set PDK_ROOT /usr/local/share/pdk}
 if {[catch {set PDK $::env(PDK)}]} {set PDK sky130A}
@@ -10,11 +8,13 @@ set techlibs ${pdklib}/libs.tech
 set reflibs ${pdklib}/libs.ref
 
 set setupfile ${techlibs}/netgen/sky130A_setup.tcl
+set hvlib ${reflibs}/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 set hdlib ${reflibs}/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
-set circuit1 [readnet spice ../netlist/layout/${project}.spice]
-set circuit2 [readnet spice $hdlib]
-readnet spice ../netlist/schematic/${project}.spice $circuit2
-
-lvs "$circuit1 ${project}" "$circuit2 ${project}" \
-	$setupfile ${project}_comp.out
+set circuit1 [readnet spice ../netlist/layout/sky130_ak_ip__cmos_vref.spice]
+set circuit2 [readnet spice $hvlib]
+readnet spice $hdlib $circuit2
+readnet spice ../netlist/schematic/sky130_ak_ip__cmos_vref.spice $circuit2
+#debug on
+lvs "$circuit1 sky130_ak_ip__cmos_vref" "$circuit2 sky130_ak_ip__cmos_vref" \
+	$setupfile sky130_ak_ip__cmos_vref_comp.out

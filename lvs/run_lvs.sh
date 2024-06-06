@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export NETGEN_COLUMNS=60
-
 echo ${PDK_ROOT:=/usr/share/pdk} > /dev/null
 echo ${PDK:=sky130A} > /dev/null
 
