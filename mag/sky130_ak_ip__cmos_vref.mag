@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1719454670
+timestamp 1721067183
 << dnwell >>
 rect 8800 -6220 21700 0
 rect 11927 -9496 21700 -6220
@@ -1581,19 +1581,19 @@ rect 9000 -19429 9300 -19369
 rect 9280 -19500 9300 -19429
 rect 9500 -19500 9520 -19300
 rect 9280 -19520 9520 -19500
-use sky130_fd_pr__res_xhigh_po_0p69_E9MCU4  R1
+use sky130_fd_pr__res_xhigh_po_0p69_E9MCU4  R1 paramcells
 timestamp 1713140876
 transform 0 1 11699 -1 0 -10331
 box -469 -2399 469 2399
-use sky130_fd_pr__res_xhigh_po_0p69_39QBTQ  R2
+use sky130_fd_pr__res_xhigh_po_0p69_39QBTQ  R2 paramcells
 timestamp 1713056482
 transform 0 1 16942 -1 0 -11365
 box -235 -1442 235 1442
-use sky130_fd_pr__res_xhigh_po_0p69_NB3ZKH  R3
+use sky130_fd_pr__res_xhigh_po_0p69_NB3ZKH  R3 paramcells
 timestamp 1713140876
 transform 0 1 11745 -1 0 -11414
 box -586 -2445 586 2445
-use sky130_fd_pr__res_xhigh_po_0p69_GAZAU4  R4
+use sky130_fd_pr__res_xhigh_po_0p69_GAZAU4  R4 paramcells
 timestamp 1713140876
 transform 0 -1 11772 1 0 -13744
 box -1756 -2472 1756 2472
@@ -1654,34 +1654,34 @@ timestamp 1715205430
 transform 1 0 10880 0 1 -8857
 box -38 -48 130 592
 use sbvfcm  x1
-timestamp 1719454670
+timestamp 1721066067
 transform 1 0 10300 0 1 -5200
 box 5700 -4700 11200 5000
 use output_amp  x2
-timestamp 1719454661
+timestamp 1721067183
 transform 1 0 10400 0 -1 -14608
-box 5100 -2900 11140 4900
+box 3834 -2900 11140 4900
 use trim_res  x3
 timestamp 1717344711
 transform 1 0 8600 0 1 -15600
 box 700 -3900 5534 -100
-use sky130_fd_pr__nfet_01v8_2333C8  XM1
+use sky130_fd_pr__nfet_01v8_2333C8  XM1 paramcells
 timestamp 1713045697
 transform 1 0 11296 0 1 -5340
 box -2196 -460 2196 460
-use sky130_fd_pr__nfet_01v8_Q33MQV  XM2
+use sky130_fd_pr__nfet_01v8_Q33MQV  XM2 paramcells
 timestamp 1717361709
 transform 0 -1 14410 1 0 -6704
 box -1196 -410 1196 410
-use sky130_fd_pr__pfet_01v8_6H4ZLK  XM3
+use sky130_fd_pr__pfet_01v8_6H4ZLK  XM3 paramcells
 timestamp 1716081177
 transform 0 1 13119 -1 0 -7204
 box -1196 -719 1196 719
-use sky130_fd_pr__pfet_01v8_B3G3L7  XM9
+use sky130_fd_pr__pfet_01v8_B3G3L7  XM9 paramcells
 timestamp 1713056482
 transform 0 -1 11837 1 0 -2475
 box -2225 -2837 2225 2837
-use sky130_fd_pr__pfet_01v8_XPMKX6  XM20
+use sky130_fd_pr__pfet_01v8_XPMKX6  XM20 paramcells
 timestamp 1713045697
 transform 0 1 9806 -1 0 -7352
 box -226 -1219 226 1219

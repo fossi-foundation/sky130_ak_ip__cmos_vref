@@ -116,7 +116,7 @@ lab=ibias}
 N 300 -80 330 -80 {
 lab=vss}
 N 150 -80 180 -80 {
-lab=SUB}
+lab=vss}
 N 240 -120 240 -80 {
 lab=ibias}
 N 620 -80 650 -80 {
@@ -185,7 +185,7 @@ C {sky130_fd_pr/nfet_01v8.sym} 200 -260 0 0 {name=M4
 L=2
 W=10
 body=SUB
-nf=1
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -200,7 +200,7 @@ C {sky130_fd_pr/nfet_01v8.sym} 400 -260 0 1 {name=M5
 L=2
 W=10
 body=SUB
-nf=1
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -249,7 +249,7 @@ C {sky130_fd_pr/pfet_01v8.sym} 600 -460 0 0 {name=M8
 W=40
 L=5
 body=vdd
-nf=1
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -263,7 +263,7 @@ spiceprefix=X
 C {devices/ammeter.sym} 620 -550 0 0 {name=Vm_op savecurrent=true lvs_ignore=short}
 C {devices/ammeter.sym} 300 -160 0 0 {name=Vm_cm savecurrent=true lvs_ignore=short}
 C {devices/ammeter.sym} 380 -550 0 0 {name=Vm_b2 savecurrent=true lvs_ignore=short}
-C {sky130_fd_pr/cap_mim_m3_1.sym} 530 -390 1 1 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 530 -390 1 1 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=10 spiceprefix=X}
 C {devices/ammeter.sym} 620 -160 0 0 {name=Vm_on savecurrent=true lvs_ignore=short}
 C {devices/opin.sym} 710 -390 0 0 {name=p1 lab=vo
 }
@@ -274,7 +274,7 @@ C {devices/ipin.sym} 90 -600 0 0 {name=p6 lab=vdd
 C {sky130_fd_pr/nfet_05v0_nvt.sym} 200 -340 0 0 {name=M9
 W=20
 L=2
-nf=1
+nf=2
 body=SUB
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -290,7 +290,7 @@ C {sky130_fd_pr/nfet_05v0_nvt.sym} 400 -340 0 1 {name=M10
 W=20
 L=2
 body=SUB
-nf=1
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"

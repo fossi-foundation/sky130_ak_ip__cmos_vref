@@ -99,7 +99,7 @@ lab=vdd}
 N 3300 -610 3340 -610 {
 lab=vdd}
 N 3100 -380 3140 -380 {
-lab=SUB}
+lab=vss}
 N 3100 -290 3140 -290 {
 lab=vss}
 N 3300 -380 3340 -380 {
@@ -123,7 +123,7 @@ C {sky130_fd_pr/nfet_01v8.sym} 3160 -290 0 1 {name=M3
 L=2
 W=100
 body=SUB
-nf=1
+nf=8
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -239,7 +239,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_1.sym} 3730 -430 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 3730 -430 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=2 spiceprefix=X}
 C {devices/lab_pin.sym} 3340 -430 0 1 {name=p1 sig_type=std_logic lab=vbias_st}
 C {devices/lab_pin.sym} 3790 -310 0 1 {name=p3 sig_type=std_logic lab=vbias_st}
 C {devices/lab_pin.sym} 3730 -560 0 0 {name=p4 sig_type=std_logic lab=vdd}
