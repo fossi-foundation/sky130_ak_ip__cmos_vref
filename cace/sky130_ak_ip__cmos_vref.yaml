@@ -1,0 +1,818 @@
+#this is an initial cace file supporting physical checks 
+name: sky130_ak_ip__cmos_vref
+description: All-CMOS voltage reference based on the NFET threshold voltage
+PDK: sky130A
+cace_format: 5.2
+authorship:
+  designer: Adan Kvitschal
+  company: ModuHub Tecnologia LTDA
+  creation_date: March 8, 2024
+  license: Apache 2.0
+paths:
+  root: ..
+  documentation: docs
+  schematic: xschem
+  magic: mag
+  layout: gds
+  netlist: netlist
+  testbench: cace
+pins:
+  vbg:
+    description: Bandgap/Reference Voltage Output
+    type: analog
+    direction: output
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  vbgsc:
+    description: 1024mV scaled reference voltage
+    type: analog
+    direction: output
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  vbgtg:
+    description: 1048mV scaled reference voltage
+    type: analog
+    direction: output
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  vptat:
+    description: PTAT Voltage Output
+    type: analog
+    direction: output
+    Vmin:
+    - avss
+    - '-'
+    - '0.3'
+    Vmax:
+    - avdd
+    - +
+    - '0.3'
+  avdd18:
+    description: Positive analog power supply
+    type: power
+    direction: inout
+    Vmin: '1.62'
+    Vmax: '1.98'
+  dvdd:
+    description: Positive digital power supply
+    type: power
+    direction: inout
+    Vmin: '1.62'
+    Vmax: '1.98'
+  avss:
+    description: Analog ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  dvss:
+    description: Digital ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  ena:
+    description: Enable
+    type: digital
+    direction: input
+    Vmin: dgnd-0.3
+    Vmax: dvdd+0.3
+  trim0:
+    description: Trim bit 0
+    type: digital
+    direction: input
+    Vmin: dgnd-0.3
+    Vmax: dvdd+0.3
+  trim1:
+    description: Trim bit 1
+    type: digital
+    direction: input
+    Vmin: dgnd-0.3
+    Vmax: dvdd+0.3
+  trim2:
+    description: Trim bit 2
+    type: digital
+    direction: input
+    Vmin: dgnd-0.3
+    Vmax: dvdd+0.3
+  trim3:
+    description: Trim bit 3
+    type: digital
+    direction: input
+    Vmin: dgnd-0.3
+    Vmax: dvdd+0.3
+default_conditions:
+  Vdvdd:
+    description: Digital Domain Power Supply value
+    unit: V
+    typical: '1.8'
+  Vavdd:
+    description: Analog domain power supply value
+    unit: V
+    typical: '1.8'
+  Vena:
+    description: Enable pin voltage, active low
+    display: Vena
+    unit: V
+    typical: '0'
+  Rload:
+    description: Output load resistance
+    display: RLoad
+    unit: Ω
+    typical: 10e6
+  Cload:
+    description: Output load capacitance
+    display: CLoad
+    unit: pF
+    typical: '0.1'
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    typical: '27'
+  corner:
+    description: Process corner
+    display: Corner
+    minimum: ss
+    typical: tt
+    maximum: ff
+  iterations:
+    description: Iterations to run
+    display: Iterations
+    minimum: '1'
+    maximum: '10'
+    step: linear
+    stepsize: '1'
+parameters:
+  vbg_nom:
+    status: skip
+    description: Nominal Reference Voltage
+    display: Vbg Nominal
+    unit: V
+    spec:
+      minimum:
+        value: '1.18'
+        fail: true
+      typical:
+        value: '1.20'
+      maximum:
+        value: '1.22'
+        fail: true
+    conditions:
+      corner:
+        typical: mc
+      iterations:
+        typical: '10'
+      output_option:
+        typical: '1'
+      ref_pin_option:
+        typical: '0'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: vbg_nom
+  vbgsc_nom:
+    status: skip
+    description: Scaled Reference Voltage of 1024mV
+    display: Vbgsc Nominal
+    unit: mV
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '1024'
+      maximum:
+        value: any
+    conditions:
+      corner:
+        typical: mc
+      iterations:
+        typical: '10'
+      output_option:
+        typical: '1'
+      ref_pin_option:
+        typical: '1'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: vbgsc_nom
+  vbgtg_nom:
+    status: skip
+    description: Scaled Reference Voltage of 1048mV
+    display: Vbgtg Nominal
+    unit: mV
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '1048'
+      maximum:
+        value: any
+    conditions:
+      corner:
+        typical: mc
+      iterations:
+        typical: '10'
+      output_option:
+        typical: '1'
+      ref_pin_option:
+        typical: '2'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: vbgtg_nom
+  Idd_enabled:
+    status: skip
+    description: Current draw through analog supply, circuit enabled
+    display: Current consumption
+    unit: µA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '2'
+      maximum:
+        value: '5'
+        fail: true
+    conditions:
+      Vavdd:
+        minimum: '1.62'
+        maximum: '1.98'
+        typical: '1.8'
+      temperature:
+        minimum: '-40'
+        maximum: '85'
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_power.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Idd_enabled
+  Idd_disabled:
+    status: skip
+    description: Current draw through analog supply, circuit disabled
+    display: Standby current
+    unit: pA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '250'
+      maximum:
+        value: '500'
+        fail: true
+    conditions:
+      Vavdd:
+        minimum: '1.62'
+        maximum: '1.98'
+        typical: '1.8'
+      Vena:
+        typical: '1.8'
+      temperature:
+        minimum: '-40'
+        maximum: '85'
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_power.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: Idd_disabled
+  accuracy_vs_process:
+    status: skip
+    description: Reference voltage error due to process variation
+    display: Accuracy vs Process
+    unit: '%'
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.5'
+        fail: true
+    conditions:
+      corner:
+        typical: mc
+      iterations:
+        typical: '100'
+      output_option:
+        typical: '2'
+      ref_pin_option:
+        typical: '0'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: accuracy_vs_process
+  accuracy_vs_mismatch:
+    status: skip
+    description: Reference voltage error due to mismatch around typical corner
+    display: Accuracy vs Mismatch
+    unit: '%'
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.5'
+        fail: true
+    conditions:
+      corner:
+        typical: tt_mm
+      iterations:
+        typical: '100'
+      output_option:
+        typical: '2'
+      ref_pin_option:
+        typical: '0'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: accuracy_vs_mismatch
+  psrr_1k:
+    status: skip
+    description: PSRR @ 1kHz
+    display: PSRR @ 1kHz
+    unit: dB
+    spec:
+      minimum:
+        value: '60'
+        fail: true
+      typical:
+        value: '70'
+      maximum:
+        value: any
+    conditions:
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      frequency:
+        unit: Hz
+        typical: 1k
+        note: Center frequency for the PSRR simulation
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_psrr.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: psrr_1k
+  temp_coeff:
+    status: skip
+    description: Vref output Temperature Coefficient
+    display: Temperature Coefficient
+    unit: ppm/°C
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '20'
+      maximum:
+        value: '30'
+        fail: true
+    conditions:
+      temperature:
+        maximum: '85'
+        minimum: '-40'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_temp_coeff.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: temp_coeff
+  line_reg:
+    status: skip
+    description: Reference voltage stability against supply voltage variation
+    display: Line Regulation
+    unit: '%'
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '0.05'
+      maximum:
+        value: '0.10'
+        fail: true
+    conditions:
+      Vavdd:
+        minimum: '1.62'
+        maximum: '1.98'
+      temperature:
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_line_reg.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: line_reg
+  load_reg:
+    status: skip
+    description: Reference voltage stability against load variation
+    display: Load Regulation
+    unit: '%'
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '0.05'
+      maximum:
+        value: '0.10'
+        fail: true
+    conditions:
+      Iload:
+        minimum: '200'
+        maximum: '1000'
+        step: '100'
+        unit: nA
+      Istep:
+        typical: '100'
+        unit: nA
+      temperature:
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_load_reg.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: load_reg
+  output_noise:
+    status: skip
+    description: Output Noise
+    display: Output Noise
+    unit: nV/√Hz
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '20'
+      maximum:
+        value: '30'
+        fail: true
+    conditions:
+      frequency:
+        minimum: '0.1'
+        maximum: '10'
+      temperature:
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_onoise.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: output_noise
+  vref_temp_plot:
+    status: skip
+    description: Vref vs Temperature
+    display: Vref vs Temperature
+    unit: mV
+    plot:
+      filename: vref_vs_temp.png
+      xaxis: temp_sweep
+      yaxis: result
+    variables:
+    - name: temp_sweep
+      display: Temperature
+      unit: °C
+    - name: result
+      display: Reference Voltage
+      unit: V
+    conditions:
+      temperature:
+        minimum: '-40'
+        maximum: '85'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: tb_temp_sweep.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - temp_sweep
+        - result
+    name: vref_temp_plot
+    spec: {}
+  line_reg_plot:
+    status: skip
+    description: Reference Voltage vs Supply Voltage
+    display: Vref vs Vs
+    unit: mV
+    plot:
+      filename: vref_vs_vsup.png
+      xaxis: vsupply
+      yaxis: result
+    variables:
+    - name: vsupply
+      display: Supply Voltage
+      unit: V
+    - name: result
+      display: Reference Voltage
+      unit: V
+    conditions:
+      Vavdd:
+        minimum: '1.0'
+        maximum: '1.98'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: tb_supply_sweep.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - vsupply
+        - result
+    name: line_reg_plot
+    spec: {}
+  trim_plot:
+    status: skip
+    description: Reference Voltage vs Trim Word
+    display: Vref vs Trim
+    unit: mV
+    plot:
+      filename: vref_vs_trim.png
+      xaxis: trimword
+      yaxis: result
+    variables:
+    - name: trimword
+      display: Trim Word
+      unit: U
+    - name: result
+      display: Reference Voltage
+      unit: V
+    conditions:
+      vio:
+        typical: '1.8'
+        unit: V
+      temperature:
+        typical: '27'
+      corner:
+        minimum: ff
+        typical: tt
+        maximum: ss
+    tool:
+      ngspice:
+        template: tb_trim.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - trimword
+        - result
+    name: trim_plot
+    spec: {}
+  startup_plot:
+    status: skip
+    description: Bandgap Voltage startup time
+    display: Startup Time
+    unit: mV
+    plot:
+      filename: vref_startup.png
+      xaxis: time
+      yaxis: result
+    variables:
+    - name: time
+      display: Time
+      unit: µs
+    - name: result
+      display: Reference Voltage
+      unit: V
+    conditions:
+      Vena:
+        minimum: '0'
+        maximum: '1.8'
+        unit: V
+      enable_time:
+        typical: '10'
+        unit: µs
+      rise_time:
+        typical: '100'
+        unit: ns
+      tran_step:
+        typical: '10'
+        unit: ns
+      tran_start:
+        typical: '10'
+        unit: µs
+      tran_stop:
+        typical: '50'
+        unit: µs
+      temperature:
+        typical: '27'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+    tool:
+      ngspice:
+        template: tb_startup.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - result
+    name: startup_plot
+    spec: {}
+  vref_process_histogram:
+    status: skip
+    description: Reference Voltage vs Process Variation
+    display: Vref vs Process Variation
+    unit: V
+    plot:
+      type: histogram
+      filename: vref_vs_process.png
+      xaxis: result
+    conditions:
+      corner:
+        typical: mc
+      iterations:
+        maximum: '100'
+      output_option:
+        typical: '0'
+      ref_pin_option:
+        typical: '0'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: vref_process_histogram
+    spec: {}
+  vref_mismatch_histogram:
+    status: skip
+    description: Reference Voltage vs Mismatch
+    display: Vref vs Mismatch
+    unit: V
+    plot:
+      type: histogram
+      filename: vref_vs_mismatch.png
+      xaxis: result
+    conditions:
+      corner:
+        typical: tt_mm
+      iterations:
+        maximum: '100'
+      output_option:
+        typical: '0'
+      ref_pin_option:
+        typical: '0'
+    tool:
+      ngspice:
+        template: tb_vref_stat.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    name: vref_mismatch_histogram
+    spec: {}
+
+  magic_area:
+    spec:
+      area:
+        display: Area
+        description: Total circuit layout area
+        unit: µm²
+        maximum:
+          value: any
+      width:
+        display: Width
+        description: Total circuit layout width
+        unit: µm
+        maximum:
+          value: any
+      height:
+        display: Height
+        description: Total circuit layout height
+        unit: µm
+        maximum:
+          value: any
+    tool:
+      magic_area
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+      magic_drc:
+        gds_flatten: true
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
+    spec:
+      lvs_errors:
+        maximum:
+          value: 0
+    tool:
+      netgen_lvs:
+        script: run_lvs.tcl
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']
+
