@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -44,24 +44,27 @@ lab=B}
 N 190 -50 350 -50 {
 lab=B}
 N 310 -330 330 -330 {
-lab=SUB}
-N 310 -330 310 -30 {
-lab=SUB}
+lab=vss}
 N 310 -250 330 -250 {
-lab=SUB}
+lab=vss}
 N 310 -170 330 -170 {
-lab=SUB}
+lab=vss}
 N 310 -90 330 -90 {
-lab=SUB}
+lab=vss}
 N 190 -330 210 -330 {
-lab=SUB}
+lab=vss}
 N 210 -330 310 -330 {
-lab=SUB}
+lab=vss}
 N 190 -250 310 -250 {
-lab=SUB}
+lab=vss}
 N 190 -170 310 -170 {
-lab=SUB}
-N 190 -90 310 -90 {}
+lab=vss}
+N 190 -90 310 -90 {
+lab=vss}
+N 290 -330 290 -250 {}
+N 290 -250 290 -170 {}
+N 290 -170 290 -90 {}
+N 290 -90 290 -50 {}
 C {devices/ipin.sym} 130 -90 0 0 {name=p3 lab=trim0}
 C {devices/ipin.sym} 130 -170 0 0 {name=p4 lab=trim1}
 C {devices/ipin.sym} 130 -250 0 0 {name=p5 lab=trim2}
@@ -128,7 +131,6 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/gnd.sym} 310 -30 0 0 {name=l1 lab=SUB}
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 350 -90 0 0 {name=R1
 L=3.45
 model=res_xhigh_po_0p69

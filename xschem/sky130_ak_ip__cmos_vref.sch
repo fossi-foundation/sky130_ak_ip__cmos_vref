@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -19,8 +19,6 @@ N 450 -70 450 -40 {
 lab=avdd_ena}
 N 430 -40 450 -40 {
 lab=avdd_ena}
-N 90 -160 130 -160 {
-lab=dvdd}
 N 90 -130 130 -130 {
 lab=dvss}
 N 260 -460 390 -460 {
@@ -141,12 +139,10 @@ N 140 -630 220 -630 {
 lab=avdd_ena}
 N 340 -320 360 -320 {
 lab=vptat}
-N 110 -100 110 -30 {
-lab=avss}
 N 220 -360 260 -360 {
-lab=SUB}
+lab=avss}
 N 220 -280 260 -280 {
-lab=SUB}
+lab=avss}
 N 810 -500 830 -500 {
 lab=avdd_ena}
 N 190 -460 220 -460 {
@@ -177,6 +173,26 @@ N 940 -120 940 -60 {
 lab=#net10}
 N 940 -120 960 -120 {
 lab=#net10}
+N 260 -280 300 -280 {
+lab=avss}
+N 300 -280 300 -220 {
+lab=avss}
+N 260 -360 300 -360 {
+lab=avss}
+N 300 -360 300 -280 {
+lab=avss}
+N 740 20 780 20 {
+lab=trim0}
+N 740 50 780 50 {
+lab=trim1}
+N 740 80 780 80 {
+lab=trim2}
+N 740 110 780 110 {
+lab=trim3}
+N 740 140 780 140 {
+lab=ena}
+N 90 -60 130 -60 {
+lab=dvdd}
 C {devices/opin.sym} 1070 -560 0 0 {name=p2 lab=vbg
 }
 C {devices/iopin.sym} 130 -100 0 0 {name=p9 lab=avss}
@@ -226,7 +242,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/iopin.sym} 130 -160 0 0 {name=p7 lab=dvdd}
 C {devices/iopin.sym} 130 -130 0 0 {name=p8 lab=dvss}
 C {devices/lab_pin.sym} 140 -630 0 0 {name=p12 sig_type=std_logic lab=avdd_ena}
 C {devices/lab_pin.sym} 430 -40 0 0 {name=p13 sig_type=std_logic lab=avdd_ena}
@@ -250,13 +265,12 @@ C {devices/opin.sym} 1070 -390 0 0 {name=p20 lab=vbgsc
 }
 C {devices/opin.sym} 1070 -470 0 0 {name=p21 lab=vbgtg
 }
-C {devices/lab_pin.sym} 90 -160 0 0 {name=p28 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} 90 -130 0 0 {name=p30 sig_type=std_logic lab=dvss}
 C {devices/lab_pin.sym} 140 -280 0 0 {name=p19 sig_type=std_logic lab=vref}
-C {/home/moduhub/work/sky130_ak_ip__cmos_vref/xschem/sbvfcm.sym} 470 -440 0 0 {name=x1}
+C {sbvfcm.sym} 470 -440 0 0 {name=x1}
 C {devices/lab_pin.sym} 90 -100 0 0 {name=p15 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 140 -220 0 0 {name=p25 sig_type=std_logic lab=avss}
-C {/home/moduhub/work/sky130_ak_ip__cmos_vref/xschem/output_amp.sym} 830 -390 0 0 {name=x2}
+C {output_amp.sym} 830 -390 0 0 {name=x2}
 C {sky130_fd_pr/pfet_01v8.sym} 790 -500 0 0 {name=M3
 W=5
 L=10
@@ -282,7 +296,7 @@ C {devices/ipin.sym} 770 -180 0 0 {name=p4 lab=trim3}
 C {devices/ipin.sym} 770 -140 0 0 {name=p5 lab=trim2}
 C {devices/ipin.sym} 770 -100 0 0 {name=p6 lab=trim1}
 C {devices/ipin.sym} 770 -60 0 0 {name=p11 lab=trim0}
-C {/home/moduhub/work/sky130_ak_ip__cmos_vref/xschem/trim_res.sym} 1030 -140 0 0 {name=x3}
+C {trim_res.sym} 1030 -140 0 0 {name=x3}
 C {devices/opin.sym} 360 -320 0 0 {name=p16 lab=vptat}
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1050 -270 0 0 {name=R4
 L=264.5
@@ -304,13 +318,27 @@ L=54.5
 model=res_xhigh_po_0p69
 spiceprefix=X
 mult=1}
-C {devices/gnd.sym} 170 -30 0 0 {name=l1 lab=SUB}
-C {devices/ammeter.sym} 140 -30 3 0 {name=sub_short savecurrent=true}
-C {devices/lab_pin.sym} 260 -360 0 1 {name=p3 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 260 -280 0 1 {name=p17 sig_type=std_logic lab=SUB}
-C {sky130_stdcells/buf_1.sym} 370 -100 0 0 {name=x4 VGND=dvss VNB=SUB VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/lab_pin.sym} 1030 -60 0 0 {name=p18 sig_type=std_logic lab=avss}
-C {sky130_stdcells/buf_1.sym} 840 -180 0 0 {name=x5 VGND=dvss VNB=SUB VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_1.sym} 840 -140 0 0 {name=x6 VGND=dvss VNB=SUB VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_1.sym} 840 -100 0 0 {name=x7 VGND=dvss VNB=SUB VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_1.sym} 840 -60 0 0 {name=x8 VGND=dvss VNB=SUB VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_1.sym} 840 -180 0 0 {name=x5 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__}
+C {sky130_stdcells/buf_1.sym} 840 -140 0 0 {name=x6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_1.sym} 840 -100 0 0 {name=x7 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_1.sym} 840 -60 0 0 {name=x8 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/diode_2.sym} 870 20 0 0 {name=x9 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {devices/lab_pin.sym} 740 20 0 0 {name=p3 sig_type=std_logic lab=trim0
+}
+C {devices/lab_pin.sym} 740 50 0 0 {name=p7 sig_type=std_logic lab=trim1
+}
+C {devices/lab_pin.sym} 740 80 0 0 {name=p17 sig_type=std_logic lab=trim2
+}
+C {devices/lab_pin.sym} 740 110 0 0 {name=p22 sig_type=std_logic lab=trim3
+}
+C {devices/lab_pin.sym} 740 140 0 0 {name=p23 sig_type=std_logic lab=ena
+}
+C {devices/iopin.sym} 130 -60 0 0 {name=p27 lab=dvdd}
+C {devices/lab_pin.sym} 90 -60 0 0 {name=p28 sig_type=std_logic lab=dvdd}
+C {sky130_stdcells/inv_2.sym} 370 -100 0 0 {name=x14 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/diode_2.sym} 870 50 0 0 {name=x4 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/diode_2.sym} 870 80 0 0 {name=x10 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/diode_2.sym} 870 110 0 0 {name=x11 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/diode_2.sym} 870 140 0 0 {name=x12 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_6.sym} 870 180 0 0 {name=x13 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
