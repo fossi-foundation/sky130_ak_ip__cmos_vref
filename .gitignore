@@ -2,7 +2,6 @@
 /doc
 /ngspice
 /reports
-/netlist
 tb_gain.raw
 /mag/extfiles
 /xschem/simulation

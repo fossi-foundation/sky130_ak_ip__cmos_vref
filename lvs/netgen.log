@@ -1,4 +1,4 @@
-Netgen 1.5.273 compiled on Tue May 14 15:25:31 EDT 2024
+Netgen 1.5.292 compiled on Sat Mar 15 21:11:52 EDT 2025
 Warning: netgen command 'format' use fully-qualified name '::netgen::format'
 Warning: netgen command 'global' use fully-qualified name '::netgen::global'
 Call to undefined subcircuit sky130_fd_pr__pfet_01v8_hvt
@@ -56,7 +56,7 @@ Creating placeholder cell definition.
 Call to undefined subcircuit sky130_fd_pr__cap_mim_m3_1
 Creating placeholder cell definition.
 
-Reading setup file /usr/local/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Reading setup file /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl
 
 Model sky130_fd_pr__res_xhigh_po_0p69 pin 1 == 2
 No property w found for device sky130_fd_pr__res_xhigh_po_0p69
@@ -331,7 +331,7 @@ Circuit 1 contains 12 nets,    Circuit 2 contains 9 nets. *** MISMATCH ***
   Flattening non-matched subcircuits sbvfcm sbvfcm
 
 Flattening instances of sbvfcm in file ../netlist/layout/sky130_ak_ip__cmos_vref.spice
-Flattening instances of sbvfcm in file /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+Flattening instances of sbvfcm in file ../netlist/schematic/sky130_ak_ip__cmos_vref.spice
 
 Contents of circuit 1:  Circuit: 'trim_res'
 Circuit trim_res contains 23 device instances.
@@ -364,7 +364,7 @@ Circuit 1 contains 10 nets,    Circuit 2 contains 9 nets. *** MISMATCH ***
   Flattening non-matched subcircuits trim_res trim_res
 
 Flattening instances of trim_res in file ../netlist/layout/sky130_ak_ip__cmos_vref.spice
-Flattening instances of trim_res in file /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+Flattening instances of trim_res in file ../netlist/schematic/sky130_ak_ip__cmos_vref.spice
 
 Contents of circuit 1:  Circuit: 'output_amp'
 Circuit output_amp contains 25 device instances.
@@ -423,7 +423,7 @@ Circuit 1 contains 12 nets,    Circuit 2 contains 11 nets. *** MISMATCH ***
   Flattening non-matched subcircuits output_amp output_amp
 
 Flattening instances of output_amp in file ../netlist/layout/sky130_ak_ip__cmos_vref.spice
-Flattening instances of output_amp in file /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+Flattening instances of output_amp in file ../netlist/schematic/sky130_ak_ip__cmos_vref.spice
 
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__inv_2'
 Circuit sky130_fd_sc_hd__inv_2 contains 4 device instances.

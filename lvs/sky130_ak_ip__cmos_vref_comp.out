@@ -160,50 +160,21 @@ Net: vss                                   |Net: vss
                                            |                                           
 Net: VSUBS                                 |(no matching net)                          
   sky130_fd_pr__nfet_01v8/4 = 6            |                                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
+                                           |                                           
 Net: XM8/w_n1196_n719#                     |(no matching net)                          
   sky130_fd_pr__pfet_01v8/4 = 1            |                                           
                                            |                                           
 Net: XM7/w_n1196_n719#                     |(no matching net)                          
   sky130_fd_pr__pfet_01v8/4 = 1            |                                           
 ---------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: pbias                                 |Net: pbias                                 
-  sky130_fd_pr__nfet_01v8/(1|3) = 2        |  sky130_fd_pr__nfet_01v8/(1|3) = 2        
-  sky130_fd_pr__pfet_01v8/(1|3) = 1        |  sky130_fd_pr__pfet_01v8/(1|3) = 1        
-  sky130_fd_pr__pfet_01v8/2 = 2            |  sky130_fd_pr__pfet_01v8/2 = 2            
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: m1_5868_n3400#                        |Net: vbias_st                              
-  sky130_fd_pr__nfet_01v8/2 = 3            |  sky130_fd_pr__nfet_01v8/2 = 3            
-  sky130_fd_pr__nfet_01v8/(1|3) = 1        |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
-  sky130_fd_pr__pfet_01v8/(1|3) = 1        |  sky130_fd_pr__pfet_01v8/(1|3) = 1        
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: sbvfcm                          |Circuit 2: sbvfcm                          
-
----------------------------------------------------------------------------------------
-Instance: sky130_fd_pr__pfet_01v8_6H4ZLK:X |Instance: sky130_fd_pr__pfet_01v8:M7       
-  (1,3) = (5,3)                            |  (1,3) = (5,5)                            
-  2 = 5                                    |  2 = 5                                    
-  4 = 1                                    |  4 = 5                                    
-                                           |                                           
-Instance: sky130_fd_pr__pfet_01v8_6H4ZLK:X |Instance: sky130_fd_pr__pfet_01v8:M8       
-  (1,3) = (5,3)                            |  (1,3) = (5,5)                            
-  2 = 5                                    |  2 = 5                                    
-  4 = 1                                    |  4 = 5                                    
----------------------------------------------------------------------------------------
 Netlists do not match.
+Port matching may fail to disambiguate symmetries.
   Flattening non-matched subcircuits sbvfcm sbvfcm
-Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_H5FMR6 in circuit trim_res (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_H5TM75 in circuit trim_res (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_N3PYDF in circuit trim_res (0)(1 instance)
 Flattening unmatched subcell sky130_fd_pr__nfet_01v8_J222PV in circuit trim_res (0)(4 instances)
+Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_N3P86F in circuit trim_res (0)(1 instance)
 Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_D5BT6X in circuit trim_res (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_2G52HS in circuit trim_res (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_RJP6R5 in circuit trim_res (0)(1 instance)
 
 Class trim_res (0):  Merged 4 parallel devices.
 Class trim_res (0):  Merged 11 series devices.
@@ -224,16 +195,17 @@ Net: A                                     |Net: A
   sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  |  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  
                                            |                                           
 Net: B                                     |Net: B                                     
-  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  |  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  
   sky130_fd_pr__nfet_01v8/(1|3) = 1        |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  |  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  
                                            |  sky130_fd_pr__nfet_01v8/4 = 4            
                                            |  sky130_fd_pr__res_xhigh_po_0p69/3 = 4    
                                            |                                           
-Net: VSUBS                                 |(no matching net)                          
+Net: sky130_fd_pr__res_xhigh_po_0p69_RJP6R |(no matching net)                          
   sky130_fd_pr__res_xhigh_po_0p69/3 = 4    |                                           
   sky130_fd_pr__nfet_01v8/4 = 4            |                                           
 ---------------------------------------------------------------------------------------
 Netlists do not match.
+Port matching may fail to disambiguate symmetries.
   Flattening non-matched subcircuits trim_res trim_res
 Flattening unmatched subcell sky130_fd_pr__nfet_01v8_QGMQL3 in circuit output_amp (0)(1 instance)
 Flattening unmatched subcell sky130_fd_pr__nfet_01v8_MMMA4V in circuit output_amp (0)(1 instance)
@@ -277,6 +249,7 @@ Net: VSUBS                                 |(no matching net)
   sky130_fd_pr__nfet_05v0_nvt/4 = 2        |                                           
 ---------------------------------------------------------------------------------------
 Netlists do not match.
+Port matching may fail to disambiguate symmetries.
   Flattening non-matched subcircuits output_amp output_amp
 
 Class sky130_fd_sc_hd__inv_2 (0):  Merged 2 parallel devices.
